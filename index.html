@@ -282,53 +282,91 @@
 
 
     /* --------------------------------------------------
-       SELECTED RESEARCH
+       SELECTED PUBLICATIONS
     -------------------------------------------------- */
 
-    .selected-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 55px;
+    .publication-list {
+      max-width: 980px;
+      margin: 0 auto;
     }
 
-    .selected-item {
+    .publication-item {
       display: grid;
-      grid-template-columns: 58px 1fr;
-      gap: 20px;
-      align-items: start;
+      grid-template-columns: 58px 1fr 40px;
+      gap: 24px;
+      align-items: center;
+      padding: 30px 0;
+      border-bottom: 1px solid #d9dee4;
     }
 
-    .selected-icon {
+    .publication-item:first-child {
+      border-top: 1px solid #d9dee4;
+    }
+
+    .publication-icon {
       width: 58px;
       height: 58px;
       border-radius: 50%;
       background: #f3f5f7;
       display: grid;
       place-items: center;
-      color: #173b64;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 26px;
+      color: #174f8f;
     }
 
-    .selected-item h3 {
+    .publication-icon svg {
+      width: 27px;
+      height: 27px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .publication-content h3 {
       font-family: Georgia, "Times New Roman", serif;
       font-size: 20px;
       font-weight: 400;
       line-height: 1.35;
+      margin: 0 0 5px;
+    }
+
+    .publication-content h3 a {
       color: #17304a;
-      margin: 0 0 13px;
+      text-decoration: none;
     }
 
-    .selected-item p {
-      color: #586777;
-      font-size: 14px;
-      line-height: 1.7;
-      margin: 0 0 14px;
+    .publication-content h3 a:hover {
+      color: #174f8f;
+      text-decoration: underline;
     }
 
-    .research-link {
+    .publication-meta {
       font-size: 14px;
-      letter-spacing: 0.03em;
+      font-style: italic;
+      color: #687583;
+      margin: 0 0 6px;
+    }
+
+    .publication-blurb {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #536273;
+      margin: 0;
+    }
+
+    .publication-arrow {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      color: #174f8f;
+      text-decoration: none;
+      text-align: center;
+      transition: transform 0.15s ease;
+    }
+
+    .publication-arrow:hover {
+      transform: translateX(4px);
+      text-decoration: none;
     }
 
 
@@ -393,9 +431,19 @@
         border-top: 1px solid #d9dee4;
       }
 
-      .selected-grid {
-        grid-template-columns: 1fr;
-        gap: 45px;
+      .publication-item {
+        grid-template-columns: 46px 1fr 28px;
+        gap: 16px;
+      }
+
+      .publication-icon {
+        width: 46px;
+        height: 46px;
+      }
+
+      .publication-icon svg {
+        width: 23px;
+        height: 23px;
       }
     }
 
@@ -421,6 +469,14 @@
         font-size: 17px;
       }
 
+      .publication-item {
+        grid-template-columns: 1fr 25px;
+      }
+
+      .publication-icon {
+        display: none;
+      }
+
     }
 
   </style>
@@ -439,11 +495,6 @@
     <div class="container header-inner">
 
       <div class="institution">
-
-        <!--
-          Upload the Vestre Viken logo to GitHub
-          and name it: vestre-viken-logo.png
-        -->
 
         <img
           src="vestre-viken-logo.png"
@@ -466,10 +517,11 @@
           CV
         </a>
 
-        <!-- Replace with your actual LinkedIn URL -->
+        <!-- Replace # with your LinkedIn URL -->
 
         <a href="#"
-           target="_blank">
+           target="_blank"
+           rel="noopener noreferrer">
           LinkedIn
         </a>
 
@@ -525,8 +577,6 @@
 
           <span class="divider">|</span>
 
-          <!-- Replace with your actual email -->
-
           <a href="mailto:marte.meyer.walle-hansen@vestreviken.no">
             Email
           </a>
@@ -536,7 +586,8 @@
           <!-- Replace # with your LinkedIn URL -->
 
           <a href="#"
-             target="_blank">
+             target="_blank"
+             rel="noopener noreferrer">
             LinkedIn
           </a>
 
@@ -547,11 +598,6 @@
 
 
       <div class="portrait-wrapper">
-
-        <!--
-          Upload your portrait to GitHub
-          and name it: portrait.jpg
-        -->
 
         <img
           class="portrait"
@@ -715,7 +761,7 @@
 
 
     <!-- ==============================================
-         SELECTED RESEARCH
+         SELECTED PUBLICATIONS
     =============================================== -->
 
     <section
@@ -725,95 +771,167 @@
       <div class="container">
 
         <p class="section-label">
-          Selected research
+          Selected publications
         </p>
 
 
-        <div class="selected-grid">
+        <div class="publication-list">
 
 
-          <article class="selected-item">
+          <!-- PUBLICATION 1 -->
 
-            <div class="selected-icon">
-              ♥
+          <article class="publication-item">
+
+            <div class="publication-icon">
+
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+
+                <path d="M9 4h10l5 5v19H9z"></path>
+                <path d="M19 4v6h6"></path>
+                <path d="M13 16h8"></path>
+                <path d="M13 20h8"></path>
+
+              </svg>
+
             </div>
 
-            <div>
+
+            <div class="publication-content">
 
               <h3>
-                Blood pressure in midlife and long-term outcomes
+                <a
+                  href="PUBLICATION_1_URL"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Title of publication one
+                </a>
               </h3>
 
-              <p>
-                Long-term associations between blood pressure around
-                age 40 and subsequent stroke and cognitive outcomes.
+              <p class="publication-meta">
+                Journal name · 2025
               </p>
 
-              <a
-                class="research-link"
-                href="#">
-                Read more →
-              </a>
+              <p class="publication-blurb">
+                One sentence explaining the main finding or why this publication matters.
+              </p>
 
             </div>
+
+
+            <a
+              class="publication-arrow"
+              href="PUBLICATION_1_URL"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open publication one">
+              →
+            </a>
 
           </article>
 
 
 
-          <article class="selected-item">
+          <!-- PUBLICATION 2 -->
 
-            <div class="selected-icon">
-              ○
+          <article class="publication-item">
+
+            <div class="publication-icon">
+
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+
+                <path d="M9 4h10l5 5v19H9z"></path>
+                <path d="M19 4v6h6"></path>
+                <path d="M13 16h8"></path>
+                <path d="M13 20h8"></path>
+
+              </svg>
+
             </div>
 
-            <div>
+
+            <div class="publication-content">
 
               <h3>
-                Frailty in cardiovascular disease
+                <a
+                  href="PUBLICATION_2_URL"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Title of publication two
+                </a>
               </h3>
 
-              <p>
-                The role of frailty in prognosis, treatment outcomes,
-                and quality of life in older adults with cardiovascular disease.
+              <p class="publication-meta">
+                Journal name · 2024
               </p>
 
-              <a
-                class="research-link"
-                href="#">
-                Read more →
-              </a>
+              <p class="publication-blurb">
+                One sentence explaining the main finding or why this publication matters.
+              </p>
 
             </div>
+
+
+            <a
+              class="publication-arrow"
+              href="PUBLICATION_2_URL"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open publication two">
+              →
+            </a>
 
           </article>
 
 
 
-          <article class="selected-item">
+          <!-- PUBLICATION 3 -->
 
-            <div class="selected-icon">
-              ⌁
+          <article class="publication-item">
+
+            <div class="publication-icon">
+
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+
+                <path d="M9 4h10l5 5v19H9z"></path>
+                <path d="M19 4v6h6"></path>
+                <path d="M13 16h8"></path>
+                <path d="M13 20h8"></path>
+
+              </svg>
+
             </div>
 
-            <div>
+
+            <div class="publication-content">
 
               <h3>
-                Healthy ageing across the lifespan
+                <a
+                  href="PUBLICATION_3_URL"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Title of publication three
+                </a>
               </h3>
 
-              <p>
-                Integrating cardiovascular health, frailty and brain
-                health to better understand healthy ageing.
+              <p class="publication-meta">
+                Journal name · 2024
               </p>
 
-              <a
-                class="research-link"
-                href="#">
-                Read more →
-              </a>
+              <p class="publication-blurb">
+                One sentence explaining the main finding or why this publication matters.
+              </p>
 
             </div>
+
+
+            <a
+              class="publication-arrow"
+              href="PUBLICATION_3_URL"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open publication three">
+              →
+            </a>
 
           </article>
 
@@ -833,9 +951,7 @@
   =============================================== -->
 
   <footer>
-
     © 2026 Marte Meyer Walle-Hansen
-
   </footer>
 
 
