@@ -1,100 +1,844 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Marte Meyer Walle-Hansen</title>
 
+  <meta name="description"
+        content="Marte Meyer Walle-Hansen, MD PhD — physician and researcher in geriatric medicine, healthy ageing, cardiovascular disease and brain health.">
+
   <style>
+
+    /* --------------------------------------------------
+       BASIC SETTINGS
+    -------------------------------------------------- */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
+      margin: 0;
+      background: #ffffff;
+      color: #17283b;
       font-family: Arial, Helvetica, sans-serif;
-      max-width: 850px;
-      margin: 70px auto;
-      padding: 0 25px;
-      color: #222;
-      line-height: 1.6;
-    }
-
-    h1 {
-      font-size: 32px;
-      margin-bottom: 5px;
-    }
-
-    h2 {
-      margin-top: 50px;
-      font-size: 22px;
-    }
-
-    .subtitle {
-      color: #555;
-      margin-top: 0;
-    }
-
-    nav {
-      margin: 25px 0 45px 0;
-    }
-
-    nav a {
-      margin-right: 20px;
-      color: #333;
-      text-decoration: none;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
+      line-height: 1.65;
     }
 
     a {
-      color: #245b8a;
+      color: #174f8f;
+      text-decoration: none;
     }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 60px));
+      margin: 0 auto;
+    }
+
+
+    /* --------------------------------------------------
+       HEADER
+    -------------------------------------------------- */
+
+    header {
+      border-bottom: 1px solid #d9dee4;
+    }
+
+    .header-inner {
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .institution {
+      display: flex;
+      align-items: center;
+    }
+
+    .institution img {
+      max-width: 200px;
+      max-height: 52px;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      gap: 42px;
+      align-items: center;
+    }
+
+    nav a {
+      color: #253547;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 13px;
+      text-decoration: none;
+      padding-bottom: 8px;
+    }
+
+    nav a:hover {
+      color: #174f8f;
+      text-decoration: none;
+    }
+
+
+    /* --------------------------------------------------
+       HERO / INTRODUCTION
+    -------------------------------------------------- */
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.8fr;
+      gap: 90px;
+      align-items: center;
+      padding: 85px 0 80px;
+    }
+
+    .hero-text {
+      max-width: 650px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(52px, 6vw, 84px);
+      line-height: 0.98;
+      font-weight: 400;
+      letter-spacing: -0.035em;
+      margin: 0 0 30px;
+      color: #10243a;
+    }
+
+    .blue-line {
+      width: 50px;
+      height: 2px;
+      background: #2d62ad;
+      margin: 28px 0;
+    }
+
+    .credentials {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 14px;
+      color: #174f8f;
+      margin-bottom: 12px;
+    }
+
+    .affiliations {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      font-style: italic;
+      color: #56616c;
+      line-height: 1.6;
+      margin: 0 0 34px;
+    }
+
+    .bio {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
+      line-height: 1.55;
+      color: #233547;
+      margin: 0;
+    }
+
+
+    /* --------------------------------------------------
+       CONTACT LINKS
+    -------------------------------------------------- */
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .contact-links a {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      color: #174f8f;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .divider {
+      color: #b1b8c0;
+    }
+
+
+    /* --------------------------------------------------
+       PHOTO
+    -------------------------------------------------- */
+
+    .portrait-wrapper {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .portrait {
+      width: 100%;
+      max-width: 470px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+
+    /* --------------------------------------------------
+       SECTION TITLES
+    -------------------------------------------------- */
+
+    .section {
+      padding: 70px 0;
+    }
+
+    .section-light {
+      background: #f8fafc;
+    }
+
+    .section-label {
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 13px;
+      color: #667789;
+      margin: 0 0 48px;
+    }
+
+
+    /* --------------------------------------------------
+       RESEARCH FOCUS
+    -------------------------------------------------- */
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .research-item {
+      text-align: center;
+      padding: 10px 50px 20px;
+    }
+
+    .research-item + .research-item {
+      border-left: 1px solid #d9dee4;
+    }
+
+    .research-icon {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 18px;
+      color: #173b64;
+    }
+
+    .research-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .research-item h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      font-weight: 400;
+      margin: 0;
+      color: #17304a;
+    }
+
+    .research-item .mini-line {
+      width: 35px;
+      height: 2px;
+      background: #2d62ad;
+      margin: 16px auto 18px;
+    }
+
+    .research-item p {
+      margin: 0 auto;
+      max-width: 290px;
+      color: #536273;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+
+    /* --------------------------------------------------
+       SELECTED RESEARCH
+    -------------------------------------------------- */
+
+    .selected-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 55px;
+    }
+
+    .selected-item {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .selected-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #f3f5f7;
+      display: grid;
+      place-items: center;
+      color: #173b64;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 26px;
+    }
+
+    .selected-item h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.35;
+      color: #17304a;
+      margin: 0 0 13px;
+    }
+
+    .selected-item p {
+      color: #586777;
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 0 0 14px;
+    }
+
+    .research-link {
+      font-size: 14px;
+      letter-spacing: 0.03em;
+    }
+
+
+    /* --------------------------------------------------
+       FOOTER
+    -------------------------------------------------- */
+
+    footer {
+      border-top: 1px solid #d9dee4;
+      text-align: center;
+      color: #7a8794;
+      font-size: 13px;
+      padding: 30px;
+    }
+
+
+    /* --------------------------------------------------
+       MOBILE / TABLET
+    -------------------------------------------------- */
+
+    @media (max-width: 900px) {
+
+      .container {
+        width: min(100% - 36px, 700px);
+      }
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px 0;
+      }
+
+      nav {
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding: 60px 0;
+      }
+
+      .portrait-wrapper {
+        justify-content: flex-start;
+      }
+
+      .portrait {
+        max-width: 500px;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .research-item {
+        padding: 35px 20px;
+      }
+
+      .research-item + .research-item {
+        border-left: none;
+        border-top: 1px solid #d9dee4;
+      }
+
+      .selected-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      h1 {
+        font-size: 48px;
+      }
+
+      nav {
+        gap: 17px;
+      }
+
+      nav a {
+        font-size: 11px;
+      }
+
+      .bio {
+        font-size: 19px;
+      }
+
+      .affiliations {
+        font-size: 17px;
+      }
+
+    }
+
   </style>
 </head>
 
+
 <body>
 
-  <h1>Marte Meyer Walle-Hansen</h1>
-  <p class="subtitle">Physician and researcher</p>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
-    <a href="#cv">CV</a>
-  </nav>
+  <!-- ==============================================
+       HEADER
+  =============================================== -->
 
-  <section id="about">
-    <h2>About</h2>
+  <header>
 
-    <p>
-      I am a physician and researcher with interests in geriatric medicine,
-      cardiovascular health, brain health, and healthy aging.
-    </p>
-  </section>
+    <div class="container header-inner">
 
-  <section id="research">
-    <h2>Research</h2>
+      <div class="institution">
 
-    <p>
-      My research focuses on cardiovascular risk, frailty, and healthy aging.
-    </p>
-  </section>
+        <!--
+          Upload the Vestre Viken logo to GitHub
+          and name it: vestre-viken-logo.png
+        -->
 
-  <section id="publications">
-    <h2>Selected publications</h2>
+        <img
+          src="vestre-viken-logo.png"
+          alt="Vestre Viken Hospital Trust">
 
-    <p>
-      Publications will be added here.
-    </p>
-  </section>
+      </div>
 
-  <section id="cv">
-    <h2>CV</h2>
 
-    <p>
-      Curriculum vitae coming soon.
-    </p>
-  </section>
+      <nav>
+
+        <a href="#research">
+          Research
+        </a>
+
+        <a href="#publications">
+          Publications
+        </a>
+
+        <a href="cv.pdf">
+          CV
+        </a>
+
+        <!-- Replace with your actual LinkedIn URL -->
+
+        <a href="#"
+           target="_blank">
+          LinkedIn
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ==============================================
+       INTRODUCTION
+  =============================================== -->
+
+  <main>
+
+    <div class="container hero">
+
+      <div class="hero-text">
+
+        <h1>
+          Marte Meyer<br>
+          Walle-Hansen
+        </h1>
+
+        <div class="blue-line"></div>
+
+        <div class="credentials">
+          MD PhD · Postdoctoral Researcher
+        </div>
+
+
+        <p class="affiliations">
+          Bærum Hospital, Vestre Viken Hospital Trust<br>
+          Marcus Institute for Aging Research, Harvard Medical School
+        </p>
+
+
+        <p class="bio">
+          My specialty is geriatric medicine and healthy ageing.
+          My current research focus is frailty in older individuals
+          with cardiovascular disease. Currently a visiting scientist
+          at Marcus Institute for Aging Research, Harvard Medical School.
+        </p>
+
+
+        <div class="contact-links">
+
+          <a href="cv.pdf">
+            CV
+          </a>
+
+          <span class="divider">|</span>
+
+          <!-- Replace with your actual email -->
+
+          <a href="mailto:YOUR_EMAIL_ADDRESS">
+            Email
+          </a>
+
+          <span class="divider">|</span>
+
+          <!-- Replace # with your LinkedIn URL -->
+
+          <a href="#"
+             target="_blank">
+            LinkedIn
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="portrait-wrapper">
+
+        <!--
+          Upload your portrait to GitHub
+          and name it: portrait.jpg
+        -->
+
+        <img
+          class="portrait"
+          src="portrait.jpg"
+          alt="Marte Meyer Walle-Hansen">
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ==============================================
+         RESEARCH FOCUS
+    =============================================== -->
+
+    <section
+      class="section section-light"
+      id="research">
+
+      <div class="container">
+
+        <p class="section-label">
+          Research focus
+        </p>
+
+
+        <div class="research-grid">
+
+
+          <!-- FRAILTY -->
+
+          <article class="research-item">
+
+            <div class="research-icon">
+
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+
+                <circle cx="25" cy="19" r="8"></circle>
+
+                <path d="M12 49v-8c0-8 5-13 13-13s13 5 13 13v8"></path>
+
+                <circle cx="43" cy="23" r="6"></circle>
+
+                <path d="M39 31c8 0 13 5 13 12v6"></path>
+
+              </svg>
+
+            </div>
+
+
+            <h2>
+              Frailty &amp; healthy ageing
+            </h2>
+
+            <div class="mini-line"></div>
+
+            <p>
+              Understanding determinants and consequences of frailty,
+              and strategies to promote healthy ageing.
+            </p>
+
+          </article>
+
+
+
+          <!-- CARDIOVASCULAR -->
+
+          <article class="research-item">
+
+            <div class="research-icon">
+
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+
+                <path d="M31 54
+                         C19 47 12 38 12 28
+                         C12 18 18 13 25 13
+                         C29 13 32 15 34 19
+                         C36 15 40 13 44 13
+                         C51 13 56 18 56 28
+                         C56 38 48 47 31 54Z">
+                </path>
+
+                <path d="M31 10v12"></path>
+
+                <path d="M39 7c-1 7-3 11-8 15"></path>
+
+              </svg>
+
+            </div>
+
+
+            <h2>
+              Cardiovascular disease
+            </h2>
+
+            <div class="mini-line"></div>
+
+            <p>
+              Investigating cardiovascular risk factors and disease
+              across midlife and older populations.
+            </p>
+
+          </article>
+
+
+
+          <!-- BRAIN -->
+
+          <article class="research-item">
+
+            <div class="research-icon">
+
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+
+                <path d="M25 48
+                         C17 48 12 43 13 36
+                         C8 32 10 24 16 22
+                         C14 15 21 10 27 13
+                         C30 7 39 9 41 14
+                         C48 11 54 17 52 23
+                         C59 25 59 34 54 37
+                         C55 44 48 49 42 47
+                         C38 53 29 53 25 48Z">
+                </path>
+
+                <path d="M27 16c-3 4-3 8 0 11"></path>
+
+                <path d="M40 16c3 4 3 8 0 11"></path>
+
+                <path d="M20 31c4-2 7-1 9 2"></path>
+
+                <path d="M45 31c-4-2-7-1-9 2"></path>
+
+                <path d="M31 32v12"></path>
+
+              </svg>
+
+            </div>
+
+
+            <h2>
+              Brain health
+            </h2>
+
+            <div class="mini-line"></div>
+
+            <p>
+              Exploring how cardiovascular health across the lifespan
+              influences brain structure and cognitive function.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==============================================
+         SELECTED RESEARCH
+    =============================================== -->
+
+    <section
+      class="section"
+      id="publications">
+
+      <div class="container">
+
+        <p class="section-label">
+          Selected research
+        </p>
+
+
+        <div class="selected-grid">
+
+
+          <article class="selected-item">
+
+            <div class="selected-icon">
+              ♥
+            </div>
+
+            <div>
+
+              <h3>
+                Blood pressure in midlife and long-term outcomes
+              </h3>
+
+              <p>
+                Long-term associations between blood pressure around
+                age 40 and subsequent stroke and cognitive outcomes.
+              </p>
+
+              <a
+                class="research-link"
+                href="#">
+                Read more →
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="selected-item">
+
+            <div class="selected-icon">
+              ○
+            </div>
+
+            <div>
+
+              <h3>
+                Frailty in cardiovascular disease
+              </h3>
+
+              <p>
+                The role of frailty in prognosis, treatment outcomes,
+                and quality of life in older adults with cardiovascular disease.
+              </p>
+
+              <a
+                class="research-link"
+                href="#">
+                Read more →
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="selected-item">
+
+            <div class="selected-icon">
+              ⌁
+            </div>
+
+            <div>
+
+              <h3>
+                Healthy ageing across the lifespan
+              </h3>
+
+              <p>
+                Integrating cardiovascular health, frailty and brain
+                health to better understand healthy ageing.
+              </p>
+
+              <a
+                class="research-link"
+                href="#">
+                Read more →
+              </a>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- ==============================================
+       FOOTER
+  =============================================== -->
+
+  <footer>
+
+    © 2026 Marte Meyer Walle-Hansen
+
+  </footer>
+
 
 </body>
+
 </html>
