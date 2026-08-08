@@ -478,7 +478,203 @@
       }
 
     }
+/* ==================================================
+   IMPROVED MOBILE LAYOUT
+   Desktop layout is unaffected
+================================================== */
 
+@media (max-width: 700px) {
+
+  /* Overall page width */
+
+  .container {
+    width: calc(100% - 40px);
+  }
+
+
+  /* ---------------- HEADER ---------------- */
+
+  .header-inner {
+    min-height: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 28px 0 22px;
+  }
+
+  .institution {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .institution img {
+    max-width: 200px;
+    max-height: 48px;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: nowrap;
+  }
+
+  nav a {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    padding-bottom: 4px;
+  }
+
+
+  /* ---------------- HERO ---------------- */
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    padding: 52px 0 55px;
+  }
+
+  .hero-text {
+    max-width: none;
+  }
+
+  h1 {
+    font-size: clamp(46px, 12vw, 58px);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+  }
+
+  .blue-line {
+    width: 46px;
+    margin: 24px 0;
+  }
+
+  .credentials {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .affiliations {
+    font-size: 17px;
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+
+  .bio {
+    font-size: 18px;
+    line-height: 1.55;
+  }
+
+
+  /* ---------------- CONTACT LINKS ---------------- */
+
+  .contact-links {
+    margin-top: 28px;
+    gap: 12px;
+  }
+
+  .contact-links a {
+    font-size: 17px;
+  }
+
+
+  /* ---------------- PORTRAIT ---------------- */
+
+  .portrait-wrapper {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .portrait {
+    width: 100%;
+    max-width: none;
+
+    /* Much less dominant on a phone */
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    /* Keeps your face toward the upper part of crop */
+    object-position: center 30%;
+  }
+
+
+  /* ---------------- SECTIONS ---------------- */
+
+  .section {
+    padding: 52px 0;
+  }
+
+  .section-label {
+    margin-bottom: 34px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+  }
+
+
+  /* ---------------- RESEARCH ---------------- */
+
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .research-item {
+    padding: 32px 10px;
+  }
+
+  .research-item:first-child {
+    padding-top: 5px;
+  }
+
+  .research-item + .research-item {
+    border-left: none;
+    border-top: 1px solid #d9dee4;
+  }
+
+  .research-item h2 {
+    font-size: 22px;
+  }
+
+  .research-item p {
+    font-size: 15px;
+    max-width: 330px;
+  }
+
+
+  /* ---------------- PUBLICATIONS ---------------- */
+
+  .publication-item {
+    grid-template-columns: 1fr 24px;
+    gap: 14px;
+    padding: 25px 0;
+  }
+
+  .publication-icon {
+    display: none;
+  }
+
+  .publication-content h3 {
+    font-size: 19px;
+  }
+
+  .publication-meta {
+    font-size: 13px;
+  }
+
+  .publication-blurb {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .publication-arrow {
+    font-size: 24px;
+  }
+
+}
+    
   </style>
 </head>
 
