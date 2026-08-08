@@ -674,6 +674,25 @@
   }
 
 }
+
+    /* Keep each institutional affiliation on its own line */
+
+    .affiliation-line {
+      display: block;
+      white-space: nowrap;
+}
+
+
+/* Smaller affiliation text on mobile */
+
+    @media (max-width: 700px) {
+
+    .affiliations {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+}
     
   </style>
 </head>
@@ -754,8 +773,8 @@
 
 
         <p class="affiliations">
-          Bærum Hospital, Vestre Viken Hospital Trust<br>
-          Marcus Institute for Ageing Research, Harvard Medical School
+          <span class="affiliation-line">Bærum Hospital, Vestre Viken Hospital Trust</span>
+          <span class="affiliation-line">Marcus Institute for Aging Research, Harvard Medical School</span>
         </p>
 
 
@@ -763,7 +782,7 @@
           My specialty is geriatric medicine and healthy ageing.<br class="desktop-break">
           My current research focus is frailty in older individuals
           with cardiovascular disease. Currently a visiting scientist
-          at Marcus Institute for Ageing Research, Harvard Medical School.
+          at Marcus Institute for Aging Research, Harvard Medical School.
         </p>
 
 
