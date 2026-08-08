@@ -224,62 +224,91 @@
 
 
     /* --------------------------------------------------
-       RESEARCH
+       CV TIMELINE
     -------------------------------------------------- */
 
-    .research-grid {
+    .cv-timeline {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .cv-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
+      grid-template-columns: 110px 28px 1fr;
+      gap: 18px;
+      min-height: 104px;
     }
 
-    .research-item {
-      text-align: center;
-      padding: 10px 50px 20px;
-    }
-
-    .research-item + .research-item {
-      border-left: 1px solid #d9dee4;
-    }
-
-    .research-icon {
-      width: 58px;
-      height: 58px;
-      margin: 0 auto 18px;
-      color: #173b64;
-    }
-
-    .research-icon svg {
-      width: 100%;
-      height: 100%;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.6;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .research-item h2 {
+    .cv-year {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 24px;
+      font-size: 17px;
+      color: #56708c;
+      text-align: right;
+      padding-top: 2px;
+    }
+
+    .cv-marker {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .cv-marker::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      bottom: -4px;
+      width: 1px;
+      background: #d9dee4;
+    }
+
+    .cv-row:last-child .cv-marker::after {
+      display: none;
+    }
+
+    .cv-marker span {
+      width: 9px;
+      height: 9px;
+      margin-top: 7px;
+      border-radius: 50%;
+      background: #2d62ad;
+      z-index: 1;
+    }
+
+    .cv-entry {
+      padding-bottom: 31px;
+    }
+
+    .cv-entry h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
       font-weight: 400;
-      margin: 0;
+      line-height: 1.35;
+      margin: 0 0 5px;
       color: #17304a;
     }
 
-    .research-item .mini-line {
-      width: 35px;
-      height: 2px;
-      background: #2d62ad;
-      margin: 16px auto 18px;
+    .cv-entry p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      margin: 0;
+      color: #647383;
+      letter-spacing: 0.01em;
     }
 
-    .research-item p {
-      margin: 0 auto;
-      max-width: 290px;
-      color: #536273;
+    .full-cv-link {
+      display: block;
+      width: max-content;
+      margin: 17px auto 0;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 15px;
-      line-height: 1.7;
+      color: #4f6f91;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .full-cv-link:hover {
+      text-decoration: underline;
     }
 
 
@@ -386,7 +415,17 @@
 
 
     /* --------------------------------------------------
-       MOBILE / TABLET
+       DESKTOP-ONLY LINE BREAKS
+    -------------------------------------------------- */
+
+    .desktop-break,
+    .desktop-affiliation-break {
+      display: block;
+    }
+
+
+    /* --------------------------------------------------
+       TABLET
     -------------------------------------------------- */
 
     @media (max-width: 900px) {
@@ -420,19 +459,6 @@
         max-width: 500px;
       }
 
-      .research-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .research-item {
-        padding: 35px 20px;
-      }
-
-      .research-item + .research-item {
-        border-left: none;
-        border-top: 1px solid #d9dee4;
-      }
-
       .publication-item {
         grid-template-columns: 46px 1fr 28px;
         gap: 16px;
@@ -449,6 +475,197 @@
       }
     }
 
+
+    /* --------------------------------------------------
+       MOBILE
+    -------------------------------------------------- */
+
+    @media (max-width: 700px) {
+
+      .container {
+        width: calc(100% - 40px);
+      }
+
+
+      /* HEADER */
+
+      .header-inner {
+        min-height: auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding: 28px 0 22px;
+      }
+
+      .institution {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .institution img {
+        max-width: 200px;
+        max-height: 48px;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+        gap: 28px;
+        flex-wrap: nowrap;
+      }
+
+      nav a {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        padding-bottom: 4px;
+      }
+
+
+      /* HERO */
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 38px;
+        padding: 52px 0 55px;
+      }
+
+      .hero-text {
+        max-width: none;
+      }
+
+      h1 {
+        font-size: clamp(46px, 12vw, 58px);
+        line-height: 0.98;
+        letter-spacing: -0.04em;
+        margin-bottom: 24px;
+      }
+
+      .blue-line {
+        width: 46px;
+        margin: 24px 0;
+      }
+
+      .credentials {
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        line-height: 1.6;
+        margin-bottom: 12px;
+      }
+
+      .affiliations {
+        font-size: 17px;
+        line-height: 1.55;
+        margin-bottom: 28px;
+      }
+
+      .bio {
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+
+      /* Remove forced desktop line breaks */
+
+      .desktop-break,
+      .desktop-affiliation-break {
+        display: none;
+      }
+
+
+      /* CONTACT LINKS */
+
+      .contact-links {
+        margin-top: 28px;
+        gap: 12px;
+      }
+
+      .contact-links a {
+        font-size: 15px;
+      }
+
+
+      /* PORTRAIT */
+
+      .portrait-wrapper {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .portrait {
+        width: 100%;
+        max-width: none;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        object-position: center 30%;
+      }
+
+
+      /* SECTIONS */
+
+      .section {
+        padding: 52px 0;
+      }
+
+      .section-label {
+        margin-bottom: 40px;
+        font-size: 12px;
+        letter-spacing: 0.18em;
+      }
+
+
+      /* CV TIMELINE */
+
+      .cv-row {
+        grid-template-columns: 72px 20px 1fr;
+        gap: 11px;
+        min-height: 110px;
+      }
+
+      .cv-year {
+        font-size: 15px;
+      }
+
+      .cv-entry h3 {
+        font-size: 19px;
+      }
+
+      .cv-entry p {
+        font-size: 14px;
+      }
+
+
+      /* PUBLICATIONS */
+
+      .publication-item {
+        grid-template-columns: 1fr 24px;
+        gap: 14px;
+        padding: 25px 0;
+      }
+
+      .publication-icon {
+        display: none;
+      }
+
+      .publication-content h3 {
+        font-size: 19px;
+      }
+
+      .publication-meta {
+        font-size: 13px;
+      }
+
+      .publication-blurb {
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .publication-arrow {
+        font-size: 24px;
+      }
+
+    }
+
+
     @media (max-width: 520px) {
 
       h1 {
@@ -456,240 +673,19 @@
       }
 
       nav {
-        gap: 17px;
+        gap: 20px;
       }
 
       nav a {
         font-size: 11px;
       }
 
-      .bio {
-        font-size: 19px;
-      }
-
-      .affiliations {
-        font-size: 17px;
-      }
-
       .publication-item {
         grid-template-columns: 1fr 25px;
       }
 
-      .publication-icon {
-        display: none;
-      }
-
     }
-/* ==================================================
-   IMPROVED MOBILE LAYOUT
-   Desktop layout is unaffected
-================================================== */
 
-@media (max-width: 700px) {
-
-  /* Overall page width */
-
-  .container {
-    width: calc(100% - 40px);
-  }
-
-
-  /* ---------------- HEADER ---------------- */
-
-  .header-inner {
-    min-height: auto;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    padding: 28px 0 22px;
-  }
-
-  .institution {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .institution img {
-    max-width: 200px;
-    max-height: 48px;
-  }
-
-  nav {
-    width: 100%;
-    justify-content: center;
-    gap: 24px;
-    flex-wrap: nowrap;
-  }
-
-  nav a {
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    padding-bottom: 4px;
-  }
-
-
-  /* ---------------- HERO ---------------- */
-
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 38px;
-    padding: 52px 0 55px;
-  }
-
-  .hero-text {
-    max-width: none;
-  }
-
-  h1 {
-    font-size: clamp(46px, 12vw, 58px);
-    line-height: 0.98;
-    letter-spacing: -0.04em;
-    margin-bottom: 24px;
-  }
-
-  .blue-line {
-    width: 46px;
-    margin: 24px 0;
-  }
-
-  .credentials {
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    line-height: 1.6;
-    margin-bottom: 12px;
-  }
-
-  .affiliations {
-    font-size: 17px;
-    line-height: 1.55;
-    margin-bottom: 28px;
-  }
-
-  .bio {
-    font-size: 18px;
-    line-height: 1.55;
-  }
-
-
-  /* ---------------- CONTACT LINKS ---------------- */
-
-  .contact-links {
-    margin-top: 28px;
-    gap: 12px;
-  }
-
-  .contact-links a {
-    font-size: 17px;
-  }
-
-
-  /* ---------------- PORTRAIT ---------------- */
-
-  .portrait-wrapper {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .portrait {
-    width: 100%;
-    max-width: none;
-
-    /* Much less dominant on a phone */
-    aspect-ratio: 4 / 3;
-
-    object-fit: cover;
-
-    /* Keeps your face toward the upper part of crop */
-    object-position: center 30%;
-  }
-
-
-  /* ---------------- SECTIONS ---------------- */
-
-  .section {
-    padding: 52px 0;
-  }
-
-  .section-label {
-    margin-bottom: 34px;
-    font-size: 12px;
-    letter-spacing: 0.18em;
-  }
-
-
-  /* ---------------- RESEARCH ---------------- */
-
-  .research-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .research-item {
-    padding: 32px 10px;
-  }
-
-  .research-item:first-child {
-    padding-top: 5px;
-  }
-
-  .research-item + .research-item {
-    border-left: none;
-    border-top: 1px solid #d9dee4;
-  }
-
-  .research-item h2 {
-    font-size: 22px;
-  }
-
-  .research-item p {
-    font-size: 15px;
-    max-width: 330px;
-  }
-
-
-  /* ---------------- PUBLICATIONS ---------------- */
-
-  .publication-item {
-    grid-template-columns: 1fr 24px;
-    gap: 14px;
-    padding: 25px 0;
-  }
-
-  .publication-icon {
-    display: none;
-  }
-
-  .publication-content h3 {
-    font-size: 19px;
-  }
-
-  .publication-meta {
-    font-size: 13px;
-  }
-
-  .publication-blurb {
-    font-size: 14px;
-    line-height: 1.55;
-  }
-
-  .publication-arrow {
-    font-size: 24px;
-  }
-
-}
-
-/* Line break after "healthy ageing" on desktop only */
-
-  .desktop-break {
-  display: block;
-}
-
-@media (max-width: 700px) {
-    .desktop-break {
-    display: none;
-  }
-}
-
-    
   </style>
 </head>
 
@@ -716,25 +712,21 @@
 
       <nav>
 
-        <a href="#research">
-          Research
+        <a
+          href="https://pubmed.ncbi.nlm.nih.gov/?sort=date&term=Walle-Hansen+MM&cauthor_id=39179252"
+          target="_blank"
+          rel="noopener noreferrer">
+          Publications
         </a>
-
-        <a href="https://pubmed.ncbi.nlm.nih.gov/?sort=date&term=Walle-Hansen+MM&cauthor_id=39179252"
-         target="_blank"
-         rel="noopener noreferrer">
-        Publications
-      </a>
 
         <a href="cv.pdf">
           CV
         </a>
 
-        <!-- Replace # with your LinkedIn URL -->
-
-        <a href="https://no.linkedin.com/in/marte-walle-hansen-04b3748b"
-           target="_blank"
-           rel="noopener noreferrer">
+        <a
+          href="https://no.linkedin.com/in/marte-walle-hansen-04b3748b"
+          target="_blank"
+          rel="noopener noreferrer">
           LinkedIn
         </a>
 
@@ -769,7 +761,7 @@
 
 
         <p class="affiliations">
-          Bærum Hospital, Vestre Viken Hospital Trust<br>
+          Bærum Hospital, Vestre Viken Hospital Trust<br class="desktop-affiliation-break">
           Marcus Institute for Aging Research, Harvard Medical School
         </p>
 
@@ -796,11 +788,10 @@
 
           <span class="divider">|</span>
 
-          <!-- Replace # with your LinkedIn URL -->
-
-          <a href="http://no.linkedin.com/in/marte-walle-hansen-04b3748b"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            href="https://no.linkedin.com/in/marte-walle-hansen-04b3748b"
+            target="_blank"
+            rel="noopener noreferrer">
             LinkedIn
           </a>
 
@@ -824,148 +815,142 @@
 
 
     <!-- ==============================================
-         RESEARCH
+         CURRICULUM VITAE
     =============================================== -->
 
     <section
       class="section section-light"
-      id="research">
+      id="cv">
 
       <div class="container">
 
         <p class="section-label">
-          Research
+          Curriculum vitae
         </p>
 
 
-        <div class="research-grid">
+        <div class="cv-timeline">
 
 
-          <!-- FRAILTY -->
+          <!-- POSITION 1 -->
 
-          <article class="research-item">
+          <div class="cv-row">
 
-            <div class="research-icon">
+            <div class="cv-year">
+              2026–
+            </div>
 
-              <svg viewBox="0 0 64 64" aria-hidden="true">
+            <div class="cv-marker">
+              <span></span>
+            </div>
 
-                <circle cx="25" cy="19" r="8"></circle>
+            <div class="cv-entry">
 
-                <path d="M12 49v-8c0-8 5-13 13-13s13 5 13 13v8"></path>
+              <h3>
+                Marcus Institute for Aging Research
+              </h3>
 
-                <circle cx="43" cy="23" r="6"></circle>
-
-                <path d="M39 31c8 0 13 5 13 12v6"></path>
-
-              </svg>
+              <p>
+                Visiting scientist
+              </p>
 
             </div>
 
-
-            <h2>
-              Frailty &amp; healthy ageing
-            </h2>
-
-            <div class="mini-line"></div>
-
-            <p>
-              Understanding determinants and consequences of frailty,
-              and strategies to promote healthy ageing.
-            </p>
-
-          </article>
+          </div>
 
 
 
-          <!-- CARDIOVASCULAR -->
+          <!-- POSITION 2 -->
 
-          <article class="research-item">
+          <div class="cv-row">
 
-            <div class="research-icon">
+            <div class="cv-year">
+              2024–
+            </div>
 
-              <svg viewBox="0 0 64 64" aria-hidden="true">
+            <div class="cv-marker">
+              <span></span>
+            </div>
 
-                <path d="M31 54
-                         C19 47 12 38 12 28
-                         C12 18 18 13 25 13
-                         C29 13 32 15 34 19
-                         C36 15 40 13 44 13
-                         C51 13 56 18 56 28
-                         C56 38 48 47 31 54Z">
-                </path>
+            <div class="cv-entry">
 
-                <path d="M31 10v12"></path>
+              <h3>
+                Bærum Hospital, Vestre Viken Hospital Trust
+              </h3>
 
-                <path d="M39 7c-1 7-3 11-8 15"></path>
-
-              </svg>
+              <p>
+                Physician in specialist training, geriatric medicine
+              </p>
 
             </div>
 
-
-            <h2>
-              Cardiovascular disease
-            </h2>
-
-            <div class="mini-line"></div>
-
-            <p>
-              Investigating cardiovascular risk factors and disease
-              across midlife and older populations.
-            </p>
-
-          </article>
+          </div>
 
 
 
-          <!-- BRAIN -->
+          <!-- POSITION 3 -->
 
-          <article class="research-item">
+          <div class="cv-row">
 
-            <div class="research-icon">
+            <div class="cv-year">
+              2022–2026
+            </div>
 
-              <svg viewBox="0 0 64 64" aria-hidden="true">
+            <div class="cv-marker">
+              <span></span>
+            </div>
 
-                <path d="M25 48
-                         C17 48 12 43 13 36
-                         C8 32 10 24 16 22
-                         C14 15 21 10 27 13
-                         C30 7 39 9 41 14
-                         C48 11 54 17 52 23
-                         C59 25 59 34 54 37
-                         C55 44 48 49 42 47
-                         C38 53 29 53 25 48Z">
-                </path>
+            <div class="cv-entry">
 
-                <path d="M27 16c-3 4-3 8 0 11"></path>
+              <h3>
+                University of Oslo
+              </h3>
 
-                <path d="M40 16c3 4 3 8 0 11"></path>
-
-                <path d="M20 31c4-2 7-1 9 2"></path>
-
-                <path d="M45 31c-4-2-7-1-9 2"></path>
-
-                <path d="M31 32v12"></path>
-
-              </svg>
+              <p>
+                PhD candidate
+              </p>
 
             </div>
 
+          </div>
 
-            <h2>
-              Brain health
-            </h2>
 
-            <div class="mini-line"></div>
 
-            <p>
-              Exploring how cardiovascular health across the lifespan
-              influences brain structure and cognitive function.
-            </p>
+          <!-- POSITION 4 -->
 
-          </article>
+          <div class="cv-row">
+
+            <div class="cv-year">
+              2017
+            </div>
+
+            <div class="cv-marker">
+              <span></span>
+            </div>
+
+            <div class="cv-entry">
+
+              <h3>
+                University of Oslo
+              </h3>
+
+              <p>
+                MD, Candidata Medicinae
+              </p>
+
+            </div>
+
+          </div>
+
 
         </div>
+
+
+        <a
+          class="full-cv-link"
+          href="cv.pdf">
+          View full CV →
+        </a>
 
       </div>
 
@@ -1012,17 +997,23 @@
             <div class="publication-content">
 
               <h3>
+
                 <a
                   href="https://heart.bmj.com/content/111/23/1119.long"
                   target="_blank"
                   rel="noopener noreferrer">
+
                   Applying the 2024 European Society of Cardiology Guidelines for the management of elevated blood pressure and hypertension to a Norwegian general population cohort from age 40: data from the Akershus Cardiac Examination 1950 study
+
                 </a>
+
               </h3>
+
 
               <p class="publication-meta">
                 Heart · 2025
               </p>
+
 
               <p class="publication-blurb">
                 In this short report we investigated who would be recommended blood pressure medication under the new European guidelines, and whether these recommendations identify people who later develop cardiovascular disease.
@@ -1065,17 +1056,23 @@
             <div class="publication-content">
 
               <h3>
+
                 <a
                   href="https://openheart.bmj.com/content/11/2/e002805"
                   target="_blank"
                   rel="noopener noreferrer">
+
                   Systolic blood pressure at age 40 and 30-year stroke risk in men and women
+
                 </a>
+
               </h3>
+
 
               <p class="publication-meta">
                 Open Heart · 2024
               </p>
+
 
               <p class="publication-blurb">
                 In this paper we investigated how blood pressure at age 40 is linked to the risk of having a stroke over the next 30 years, and whether this differs between women and men.
@@ -1118,17 +1115,23 @@
             <div class="publication-content">
 
               <h3>
+
                 <a
                   href="PUBLICATION_3_URL"
                   target="_blank"
                   rel="noopener noreferrer">
+
                   Title of publication three
+
                 </a>
+
               </h3>
+
 
               <p class="publication-meta">
                 Journal name · 2024
               </p>
+
 
               <p class="publication-blurb">
                 One sentence explaining the main finding or why this publication matters.
